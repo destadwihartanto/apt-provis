@@ -73,7 +73,7 @@
                 <button type="submit" class="btn btn-primary" id="save-button"><i class="far fa-check-circle"></i> Simpan</button>
                 <a href="<?= site_url('xpole/index') ?>" class="btn btn-danger"><i class="fa fa-times-circle"></i> Batal</a>
             </div>
-
+        </form>
     </div> <!-- /.card -->
 </div>
 <!--/.col (left) -->
@@ -111,12 +111,18 @@
                                     <img src="<?= site_url('uploads/' . $query[$row]) ?>" class="img-fluid col-sm-6" alt="Hasil">
                                 <?php else : ?>
                                     <p> <span class="badge badge-warning">Tidak ada Lampiran</span></p>
-                                    <div class="form-group">
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" name="<?= $row ?>">
-                                            <label class="custom-file-label" for="<?= $row ?>"><?= $key ?></label>
+                                    <form class="form" method="post" action="<?= site_url('xpole/do_upload/'.$row.'/' . $id); ?>" enctype="multipart/form-data">
+                                        <div class="form-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" name="<?= $row ?>">
+                                                <label class="custom-file-label" for="<?= $row ?>"><?= $key ?></label>
+                                            </div>
+                                            <p class="my-3 float-right">
+                                                <button type="submit" class="btn btn-sm btn-primary mr-0" id="save-button"><i class="fa fa-upload"></i> Upload</button>
+                                                <a href="<?= site_url('xpole/index') ?>" class="btn btn-sm btn-danger"><i class="fa fa-times-circle"></i> Batal</a>
+                                            </p>
                                         </div>
-                                    </div>
+                                    </form>
                                 <?php endif; ?>
                             </td>
                             <td class="text-right py-0 align-middle">
@@ -131,7 +137,7 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            </form>
+
         </div> <!-- /.card-body -->
     </div>
 </div> <!-- /.right column -->

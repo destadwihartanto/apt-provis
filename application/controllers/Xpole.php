@@ -1,8 +1,11 @@
 <?php
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Xpole extends CI_Controller
 {
+    private $upload_path = './uploads/';
+
     public function __construct()
     {
         parent::__construct();
@@ -65,9 +68,6 @@ class Xpole extends CI_Controller
         ];
         $this->load->view('template/layout', $data);
     }
-
-    
-
 
     public function create()
     {
@@ -148,22 +148,28 @@ class Xpole extends CI_Controller
         return $config;
     }
 
-    public function do_upload($form_name)
+    public function do_upload($form_name, $id = 0)
     {
-        $config['upload_path'] = './uploads/';
+        $config['upload_path'] = $this->upload_path;
         $config['allowed_types'] = 'gif|jpg|jpeg|png';
         $config['max_size'] = 3000;
         $config['max_width'] = 0;
         $config['max_height'] = 0;
         $config['encrypt_name'] = true;
         $this->load->library('upload', $config);
+        $this->upload->display_errors('', '');
 
         if (!$this->upload->do_upload($form_name)) {
             $data = $this->upload->display_errors();
+            $this->session->set_flashdata('alert_icon', 'warning');
+            $this->session->set_flashdata('alert_message', $data);
         } else {
             $data = $this->upload->data();
+            $this->xpole_model->update(base64_decode($id), [$form_name => $data['file_name']]);
+            $this->session->set_flashdata('alert_icon', 'success');
+            $this->session->set_flashdata('alert_message', 'Lampiran berhasil di Upload');
         }
-        return $data;
+        redirect('xpole/update/' . $id);
     }
 
     public function update($id = null)
@@ -214,7 +220,6 @@ class Xpole extends CI_Controller
             redirect('xpole/detail/' . $id);
         }
     }
-
 
     public function detail($id = null)
     {

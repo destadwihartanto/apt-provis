@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '80db744e1ebc1429a1f3d666ebf201a9923b6a5c',
+    'reference' => '5286b2368264f1239ffc77e26512712af0f2cd5d',
     'name' => 'codeigniter/framework',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '80db744e1ebc1429a1f3d666ebf201a9923b6a5c',
+      'reference' => '5286b2368264f1239ffc77e26512712af0f2cd5d',
     ),
     'components/font-awesome' => 
     array (
@@ -49,12 +49,12 @@
     ),
     'doctrine/instantiator' => 
     array (
-      'pretty_version' => '1.4.1',
-      'version' => '1.4.1.0',
+      'pretty_version' => '1.5.0',
+      'version' => '1.5.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '10dcfce151b967d20fde1b34ae6640712c3891bc',
+      'reference' => '0a0fa9780f5d4e507415a065172d26a98d02047b',
     ),
     'mikey179/vfsstream' => 
     array (
@@ -283,12 +283,12 @@
     ),
     'symfony/polyfill-ctype' => 
     array (
-      'pretty_version' => 'v1.26.0',
-      'version' => '1.26.0.0',
+      'pretty_version' => 'v1.27.0',
+      'version' => '1.27.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '6fd1b9a79f6e3cf65f9e679b23af304cd9e010d4',
+      'reference' => '5bbc823adecdae860bb64756d639ecfec17b050a',
     ),
     'symfony/yaml' => 
     array (
