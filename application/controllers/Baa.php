@@ -30,7 +30,7 @@ class Baa extends CI_Controller
             redirect('site/index');
         } else {
             $att = $query[0];
-            $approved_at = date('j F Y', strtotime($att['approved_at']));
+            $approved_at = isset($att['approved_at']) ? date('j F Y', strtotime($att['approved_at'])) : '-';
 
             $data[] = [
                 'Doc No' => 'xxxxxxxxx',
@@ -43,7 +43,7 @@ class Baa extends CI_Controller
             ];
 
             $data[] = [
-                'Create Terminal' => date('j F Y', strtotime($att['registered_at'])),
+                'Create Terminal' => isset($att['registered_at']) ? date('j F Y', strtotime($att['registered_at'])) : '-',
                 'Modem Commisioning (measured ES/No & Expected Es/No)' => $approved_at,
                 'CPI Level Check' => $approved_at,
                 'Modcod Check' => $approved_at,
