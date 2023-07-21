@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => '45.143.81.177',
+	'username' => 'n1655223_apt_provisioning',
+	'password' => 'apt_provisioning#123',
 	'database' => 'n1655223_apt_provisioning',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

@@ -48,7 +48,7 @@ class Technician extends CI_Controller
     }
 
     public function create()
-    
+
     {
         $this->form_validation->set_rules($this->SetValidations());
         if ($this->form_validation->run() == false) {

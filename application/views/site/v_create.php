@@ -1,11 +1,11 @@
 <!-- left column -->
 <div class="col-md-9">
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong><i class="fas fa-exclamation-triangle"></i>&nbsp;Informasi :</strong> Kolom Wajib diisi Site ID,Site Name, Batch, Nama PIC Lokasi,Telepon PIC,Lokasi,Latitude,Longitude, dan dropdwon  
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>    
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong><i class="fas fa-exclamation-triangle"></i>&nbsp;Informasi :</strong> Kolom Wajib diisi Site ID,Site Name, Batch, Nama PIC Lokasi,Telepon PIC,Lokasi,Latitude,Longitude, dan dropdwon
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 
     <div class="card card-primary">
         <div class="card-header">
@@ -69,60 +69,60 @@
                 <?php endforeach; ?>
 
                 <div class="form-group row">
-                <div class="col-lg-3  mt-2 mb-2">
-                    <label for="exampleInputEmail1">Propinsi</label>
-                    <select name="province_id" class="form-control js-example-basic-single" id="province_id" style="width: 100%;" required>
-                        <option value="">-- Pilih --</option>
-                        <?php foreach ($provinces as $key => $row) : ?>
-                            <option value="<?= $row['id'] ?>"><?= $row['name'] ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                    <?= form_error('province_id'); ?>
+                    <div class="col-lg-3  mt-2 mb-2">
+                        <label for="exampleInputEmail1">Propinsi</label>
+                        <select name="province_id" class="form-control js-example-basic-single" id="province_id" style="width: 100%;" required>
+                            <option value="">-- Pilih --</option>
+                            <?php foreach ($provinces as $key => $row) : ?>
+                                <option value="<?= $row['id'] ?>"><?= $row['name'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                        <?= form_error('province_id'); ?>
+                    </div>
+
+                    <div class="col-lg-3  mt-2 mb-2">
+                        <label for="exampleInputEmail1">Kota/Kabupaten</label>
+                        <select name="regency_id" class="form-control js-example-basic-single" id="regency_id" style="width: 100%;" required>
+                            <option value="">-- Pilih --</option>
+                        </select>
+                        <?= form_error('regency_id'); ?>
+                    </div>
+
+                    <div class="col-lg-3  mt-2 mb-2">
+                        <label for="exampleInputEmail1">Kecamatan</label>
+                        <select name="district_id" class="form-control js-example-basic-single" id="district_id" style="width: 100%;" required>
+                            <option value="">-- Pilih --</option>
+                        </select>
+                        <?= form_error('district_id'); ?>
+                    </div>
+
+                    <div class="col-lg-3  mt-2 mb-2">
+                        <label for="exampleInputEmail1">Desa/Kelurahan</label>
+                        <select name="village_id" class="form-control js-example-basic-single" id="village_id" style="width: 100%;" required>
+                            <option value="">-- Pilih --</option>
+                        </select>
+                        <?= form_error('village_id'); ?>
+                    </div>
+
+                    <div class="col-lg-7  mt-2 mb-2">
+                        <label for="exampleInputEmail1">Alamat</label>
+                        <textarea class="form-control" name="alamat" rows="3" placeholder="Alamat"><?= set_value('alamat') ?></textarea>
+                        <?= form_error('alamat'); ?>
+                    </div>
+
+                    <div class="col-lg-5  mt-2 mb-2">
+                        <label for="exampleInputEmail1">Tanggal Integrasi</label>
+                        <input type="date" class="form-control" name="operational_date" id="operational_date">
+                        <?= form_error('alamat'); ?>
+                    </div>
+
+                </div> <!-- /.card-body -->
+
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary" id="save-button"><i class="far fa-check-circle"></i> Simpan</button>
+                    <a href="<?= site_url('site/index') ?>" class="btn btn-danger" id="cancel"><i class="fa fa-times-circle"></i> Batal</a>
                 </div>
-
-                <div class="col-lg-3  mt-2 mb-2">
-                    <label for="exampleInputEmail1">Kota/Kabupaten</label>
-                    <select name="regency_id" class="form-control js-example-basic-single" id="regency_id" style="width: 100%;" required>
-                        <option value="">-- Pilih --</option>
-                    </select>
-                    <?= form_error('regency_id'); ?>
-                </div>
-
-                <div class="col-lg-3  mt-2 mb-2">
-                    <label for="exampleInputEmail1">Kecamatan</label>
-                    <select name="district_id" class="form-control js-example-basic-single" id="district_id" style="width: 100%;" required>
-                        <option value="">-- Pilih --</option>
-                    </select>
-                    <?= form_error('district_id'); ?>
-                </div>
-
-                <div class="col-lg-3  mt-2 mb-2">
-                    <label for="exampleInputEmail1">Desa/Kelurahan</label>
-                    <select name="village_id" class="form-control js-example-basic-single" id="village_id" style="width: 100%;" required>
-                        <option value="">-- Pilih --</option>
-                    </select>
-                    <?= form_error('village_id'); ?>
-                </div>
-
-                <div class="col-lg-7  mt-2 mb-2">
-                    <label for="exampleInputEmail1">Alamat</label>
-                    <textarea class="form-control" name="alamat" rows="3" placeholder="Alamat"><?= set_value('alamat') ?></textarea>
-                    <?= form_error('alamat'); ?>
-                </div>
-
-                <div class="col-lg-5  mt-2 mb-2">
-                    <label for="exampleInputEmail1">Tanggal Integrasi</label>
-                    <input type="date" class="form-control" name="operational_date" id="operational_date" required>
-                    <?= form_error('alamat'); ?>
-                </div>
-
-            </div> <!-- /.card-body -->
-
-
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary" id="save-button"><i class="far fa-check-circle"></i> Simpan</button>
-                <a href="<?= site_url('site/index') ?>" class="btn btn-danger" id="cancel"><i class="fa fa-times-circle"></i> Batal</a>
-            </div>
         </form>
     </div> <!-- /.card -->
 </div>

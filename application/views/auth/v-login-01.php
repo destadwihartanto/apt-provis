@@ -29,10 +29,12 @@
             </div>
         </div>
     </div>
+
     <main class="main-content  mt-0">
-        <div class="page-header align-items-start min-vh-100" style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');">
+        <div class="page-header align-items-start min-vh-100" style="background-image: url('<?= base_url('assets_login/img/oss.gif') ?>');">
             <span class="mask bg-gradient-dark opacity-6"></span>
             <div class="container my-auto">
+
                 <div class="row">
                     <div class="col-lg-4 col-md-8 col-12 mx-auto">
                         <div class="card z-index-0 fadeIn3 fadeInBottom">
@@ -53,7 +55,7 @@
                                         <input type="password" name="<?= $password['name'] ?>" id="<?= $password['id'] ?>" class="form-control" aria-label="Password">
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn bg-gradient-info w-100 my-4 mb-2">Masuk</button>
+                                        <button type="submit" class="btn bg-gradient-danger w-100 my-4 mb-2">Masuk</button>
                                     </div>
                                     <!-- <p class="mt-4 text-sm text-center">
                                         Buat akun anda, untuk menjadi donatur? &nbsp;
@@ -81,10 +83,10 @@
                                 APT © <script>
                                     document.write(new Date().getFullYear())
                                 </script>
-                              
+
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </footer>

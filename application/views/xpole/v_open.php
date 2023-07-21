@@ -1,12 +1,13 @@
 <?php $this->load->view('template/alert') ?>
 <div class="col-12">
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-  <strong><i class="fas fa-exclamation-triangle"></i>&nbsp;Informasi :</strong> <p>1.Halaman ini menampilkan data menu Crosspole status Open<br>
-  2.Pada kolom aksi terdapat tombol info : untuk melihat detail, edit : untuk ubah data, hapus : untuk menghapus data , dan tombol cheklist untuk melakukan approve status </p>
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-</div>    
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong><i class="fas fa-exclamation-triangle"></i>&nbsp;Informasi :</strong>
+        <p>1.Halaman ini menampilkan data menu Crosspole status Open<br>
+            2.Pada kolom aksi terdapat tombol info : untuk melihat detail, edit : untuk ubah data, hapus : untuk menghapus data , dan tombol cheklist untuk melakukan approve status </p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
 
 
     <div class="card card-info">
@@ -45,18 +46,18 @@
                                 <?= date('d F Y H:i', strtotime($value['last_update'])) ?>
                             </td>
                             <td><?= character_limiter($value['notes'], 50)  ?></td>
-                           <td class="project-actions text-center">
-                            <div class="btn-group btn-group-sm">
-                            <a href="<?= base_url('xpole/detail/' . base64_encode($value['id'])) ?>" class="btn btn-outline-info" data-toggle="tooltip" title="Detail Data"><i class="fas fa-info-circle"></i></a>
-                            <a href="<?= base_url('xpole/update/' . base64_encode($value['id'])) ?>" class="btn btn-outline-dark" data-toggle="tooltip" title="Edit Data"><i class="fas fa-edit"></i></a>
-                                                                    <?php if ($is_admin && $value['status'] == 'open') :  ?>
-                            <a href="<?= base_url('xpole/approve/' . base64_encode($value['id'])) ?>" class="btn btn-outline-success approve" data-toggle="tooltip" title="Chek Data"><i class="fas fa-check"></i></a>
-                                                                    <?php endif ?>
-                                                                                                            <?php if ($is_admin) :  ?>
-                            <a href="<?= base_url('xpole/delete/' . base64_encode($value['id'])) ?>" data-site="<?= $value['nama_site'] ?>" class="btn btn-outline-danger delete" data-toggle="tooltip" title="Hapus Data"><i class="fas fa-trash"></i></a>
-                                                                    <?php endif ?>
+                            <td class="project-actions text-center">
+                                <div class="btn-group btn-group-sm">
+                                    <a href="<?= base_url('xpole/detail/' . base64_encode($value['id'])) ?>" class="btn btn-outline-info" data-toggle="tooltip" title="Detail Data"><i class="fas fa-info-circle"></i></a>
+                                    <a href="<?= base_url('xpole/update/' . base64_encode($value['id'])) ?>" class="btn btn-outline-dark" data-toggle="tooltip" title="Edit Data"><i class="fas fa-edit"></i></a>
+                                    <?php if ($is_admin && $value['status'] == 'open') :  ?>
+                                        <a href="<?= base_url('xpole/approve/' . base64_encode($value['id'])) ?>" class="btn btn-outline-success approve" data-toggle="tooltip" title="Chek Data"><i class="fas fa-check"></i></a>
+                                    <?php endif ?>
+                                    <?php if ($is_admin) :  ?>
+                                        <a href="<?= base_url('xpole/delete/' . base64_encode($value['id'])) ?>" data-site="<?= $value['nama_site'] ?>" class="btn btn-outline-danger delete" data-toggle="tooltip" title="Hapus Data"><i class="fas fa-trash"></i></a>
+                                    <?php endif ?>
 
-                            </div>
+                                </div>
                             </td>
 
                             <!-- <td class="project-actions text-center">
@@ -93,7 +94,7 @@
 <script>
     $(function() {
         $('#example1 tfoot th').each(function() {
-           
+
             var title = $(this).text();
             $(this).html('<input type="text" class="form-control" placeholder="Search ' + title + '" />');
         });

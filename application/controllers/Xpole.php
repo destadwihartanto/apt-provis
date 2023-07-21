@@ -39,8 +39,8 @@ class Xpole extends CI_Controller
         }
 
         $data = [
-            'title' => 'List Crosspole',
-            'nav_link' => 'xpole',
+            'title' => 'List Xpole',
+            'nav_link' => 'xpole_open',
             'query' => $this->xpole_model->show_table_open($where),
             'content' => 'xpole/v_open',
             'is_admin' => $this->ion_auth->is_admin() || is_noc(),
@@ -60,7 +60,7 @@ class Xpole extends CI_Controller
 
         $data = [
             'title' => 'List Crosspole',
-            'nav_link' => 'xpole',
+            'nav_link' => 'xpole_approve',
             'query' => $this->xpole_model->show_table_approve($where),
             'content' => 'xpole/v_disetujui',
             'is_admin' => $this->ion_auth->is_admin() || is_noc(),
@@ -68,6 +68,7 @@ class Xpole extends CI_Controller
         ];
         $this->load->view('template/layout', $data);
     }
+
 
     public function create()
     {
@@ -129,8 +130,9 @@ class Xpole extends CI_Controller
             array(
                 'field' => 'teknisi_id',
                 'label' => 'Teknisi',
-                'rules' => 'required|integer',
+                'rules' => 'integer',
             ),
+
             array(
                 'field' => 'status',
                 'label' => 'Status',
@@ -140,6 +142,13 @@ class Xpole extends CI_Controller
                 'category' => 'text',
                 'field' => 'notes',
                 'label' => 'Notes'
+                // 'rules' => 'required'
+            ),
+
+            array(
+                'category' => 'text',
+                'field' => 'manual_teknisi',
+                'label' => 'manual_teknisi'
                 // 'rules' => 'required'
             ),
 
@@ -195,7 +204,7 @@ class Xpole extends CI_Controller
                 'id' => $id,
                 'is_admin' => $is_admin,
                 'query' => $query,
-                'attachment' => $this->SetupAttachment() ,
+                'attachment' => $this->SetupAttachment(),
                 'teknisi' => $technicians,
                 'content' => 'xpole/v_update',
             ];
@@ -272,6 +281,8 @@ class Xpole extends CI_Controller
 
     public function delete($id = null)
     {
+        error_reporting(E_ALL ^ (E_NOTICE | E_WARNING | E_DEPRECATED));
+
         $data = $this->find($id);
         $this->check_before_update(base64_decode($id));
         $images = $this->SetupAttachment();

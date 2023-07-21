@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING | E_DEPRECATED));
 class Baa extends CI_Controller
 {
     public function __construct()
@@ -108,7 +108,7 @@ class Baa extends CI_Controller
         $pdf->SetTextColor(0);
         $pdf->SetFont('helvetica', '', 14);
         $h = 10;
-        $pdf->Image(site_url('assets/img/apt_logo.jpeg'),159,5,40);
+        $pdf->Image(site_url('assets/img/apt_logo.png'), 159, 10, 40);
         $pdf->Ln(2);
         $pdf->MultiCell(180, $h, 'BERITA ACARA INTEGRASI HUB & AKTIVASI', 0, 'C', 0, 1, '', '', true, 0, false, true, $h, 'M');
 

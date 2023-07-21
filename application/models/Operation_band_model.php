@@ -17,4 +17,21 @@ class Operation_band_model extends CI_Model
         $query = $this->db->get_where($this->table, $where);
         return $query->result_array();
     }
+
+    public function save($data)
+    {
+        $this->db->insert($this->table, $data);
+        return $this->db->insert_id();
+    }
+
+    public function delete_obs($id)
+    {
+        $this->db->delete($this->table, array('id' => $id));
+    }
+
+    public function update($id = 0, $data = [])
+    {
+        $this->db->where('id', $id);
+        $this->db->update($this->table, $data);
+    }
 }

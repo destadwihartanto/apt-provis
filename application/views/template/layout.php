@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>OSS | <?= $title ?? false ?></title>
-
+    <link rel="icon" href="<?= base_url() ?>assets/img/apt_logo.png" type="image/png" />
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -46,7 +46,9 @@
 
 </head>
 
-<body class="hold-transition sidebar-mini">
+<!-- <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed"> -->
+<body class="hold-transition dark-mode sidebar-mini">
+    
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-dark navbar-dark">
@@ -54,7 +56,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i>
-                </a>
+                    </a>
                 </li>
             </ul>
             <img src="<?= base_url() ?>assets_login/img/angkasa-prima-teknologi-logo.png" alt="AdminLTE Logo" class="brand-image" width="120px">
@@ -83,7 +85,7 @@
         </nav> <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-dark-info elevation-4">
             <!-- Brand Logo -->
             <!-- <a href="<?= base_url() ?>" class="brand-link">
                 <img src="<?= base_url() ?>assets_login/img/angkasa-prima-teknologi-logo.png" alt="AdminLTE Logo" class="brand-image elevation-3" style="opacity: .8">
@@ -98,7 +100,7 @@
                         <img src="<?= base_url() ?>assets/img/default.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="<?=base_url('dashboard/index')?>" class="d-block"><?= $this->ion_auth->user()->row()->company ?? 'Welcome' ?></a>
+                        <a href="<?= base_url('dashboard/index') ?>" class="d-block"><?= $this->ion_auth->user()->row()->first_name ?? 'Welcome' ?></a>
                     </div>
                 </div>
 
@@ -137,7 +139,7 @@
 
         <footer class="main-footer bg-dark">
             <div class="float-right d-none d-sm-block">
-                <b>Version</b> 1.0
+                <b>Version</b> 2.0
             </div>
             <strong>Copyright &copy; <?= date("Y") ?> <a href="#" target="_blank">APT</a>.</strong>
         </footer>

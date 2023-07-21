@@ -1,4 +1,4 @@
-<?php  if (! defined('BASEPATH')) {
+<?php if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
@@ -23,9 +23,20 @@ class Penyedia_model extends CI_Model
         return $this->db->insert_id();
     }
 
-    public function update($device_id = 0, $data = [])
+    // public function update($device_id = 0, $data = [])
+    // {
+    //     $this->db->where('device_id', $device_id);
+    //     $this->db->update($this->table, $data);
+    // }
+
+    public function update($id = 0, $data = [])
     {
-        $this->db->where('device_id', $device_id);
+        $this->db->where('id', $id);
         $this->db->update($this->table, $data);
+    }
+
+    public function delete_penyedia($id)
+    {
+        $this->db->delete($this->table, array('id' => $id));
     }
 }

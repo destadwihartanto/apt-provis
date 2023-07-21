@@ -15,6 +15,10 @@
         <table class="table table-bordered">
             <tbody>
                 <tr>
+                    <th>Site ID</th>
+                    <td><?= $query['nama_site'] ?></td>
+                </tr>
+                <tr>
                     <th>Nama Lokasi</th>
                     <td><?= $query['nama_site'] ?></td>
                 </tr>
@@ -84,7 +88,7 @@
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="SecondModem">
-                        <a target="_blank"  href="<?= site_url('uploads/' . $query['url_img_second_modem']) ?>">
+                        <a target="_blank" href="<?= site_url('uploads/' . $query['url_img_second_modem']) ?>">
                             <img width="50%" src="<?= site_url('uploads/' . $query['url_img_second_modem']) ?>" class="img-fluid mb-2" alt="Modem #2" />
                         </a>
                     </div>

@@ -61,7 +61,7 @@
                     <?= form_error('ip_mikrotik'); ?>
                 </div>
 
-                <div class="col-lg-4  mt-2 mb-2">
+                <!-- <div class="col-lg-4  mt-2 mb-2">
                     <label for="ip_lan">IP LAN</label>
                     <input type="text" name="ip_lan" class="form-control" value="<?= $query['ip_lan'] ?>" placeholder="IP LAN">
                     <?= form_error('ip_lan'); ?>
@@ -71,7 +71,7 @@
                     <label for="ip_router">IP Router</label>
                     <input type="text" name="ip_router" class="form-control" value="<?= $query['ip_router'] ?>" placeholder="IP Router">
                     <?= form_error('ip_router'); ?>
-                </div>
+                </div> -->
 
                 <div class="col-lg-4  mt-2 mb-2">
                     <label for="airmac_modem">Airmac Modem</label>
@@ -79,41 +79,41 @@
                     <?= form_error('airmac_modem'); ?>
                 </div>
 
-                <div class="col-lg-4  mt-2 mb-2">
+                <!-- <div class="col-lg-4  mt-2 mb-2">
                     <label for="vlan_oam_mikrotik">VLAN Oam Mikrotik</label>
                     <input type="text" name="vlan_oam_mikrotik" class="form-control" value="<?= $query['vlan_oam_mikrotik'] ?>" placeholder="VLAN Oam Mikrotik">
                     <?= form_error('vlan_oam_mikrotik'); ?>
-                </div>
+                </div> -->
 
-                <div class="col-lg-4  mt-2 mb-2">
+                <!-- <div class="col-lg-4  mt-2 mb-2">
                     <label for="vlan_oam_nodeb">VLAN Oam e nodeB</label>
                     <input type="text" name="vlan_oam_nodeb" class="form-control" value="<?= $query['vlan_oam_nodeb'] ?>" placeholder="VLAN Oam e nodeB">
                     <?= form_error('vlan_oam_nodeb'); ?>
-                </div>
+                </div> -->
 
-                <div class="col-lg-4  mt-2 mb-2">
+                <!-- <div class="col-lg-4  mt-2 mb-2">
                     <label for="vlan_oam_cctv">VLAN Oam CCTV</label>
                     <input type="text" name="vlan_oam_cctv" class="form-control" value="<?= $query['vlan_oam_cctv'] ?>" placeholder="VLAN Oam CCTV">
                     <?= form_error('vlan_oam_cctv'); ?>
-                </div>
+                </div> -->
 
-                <div class="col-lg-4  mt-2 mb-2">
+                <!-- <div class="col-lg-4  mt-2 mb-2">
                     <label for="vlan_oam_power">VLAN Oam Power</label>
                     <input type="text" name="vlan_oam_power" class="form-control" value="<?= $query['vlan_oam_power'] ?>" placeholder="VLAN Oam Power">
                     <?= form_error('vlan_oam_power'); ?>
-                </div>
+                </div> -->
 
-                <div class="col-lg-4  mt-2 mb-2">
+                <!-- <div class="col-lg-4  mt-2 mb-2">
                     <label for="vlan_s1c">VLAN s1-C</label>
                     <input type="text" name="vlan_s1c" class="form-control" value="<?= $query['vlan_s1c'] ?>" placeholder="VLAN s1-C">
                     <?= form_error('vlan_s1c'); ?>
-                </div>
+                </div> -->
 
-                <div class="col-lg-4  mt-2 mb-2">
+                <!-- <div class="col-lg-4  mt-2 mb-2">
                     <label for="vlan_s1u">VLAN s1-U</label>
                     <input type="text" name="vlan_s1u" class="form-control" value="<?= $query['vlan_s1u'] ?>" placeholder="VLAN s1-U">
                     <?= form_error('vlan_s1u'); ?>
-                </div>
+                </div> -->
 
                 <div class="col-lg-4  mt-2 mb-2">
                     <label for="sid">Site ID</label>
@@ -121,11 +121,11 @@
                     <?= form_error('sid'); ?>
                 </div>
 
-                <div class="col-lg-4  mt-2 mb-2">
+                <!-- <div class="col-lg-4  mt-2 mb-2">
                     <label for="snmp_community">Community String SNMP Router dan AP</label>
                     <input type="text" name="snmp_community" class="form-control" value="<?= $query['snmp_community'] ?>" placeholder="Community String SNMP Router dan AP">
                     <?= form_error('snmp_community'); ?>
-                </div>
+                </div> -->
 
                 <div class="col-lg-4  mt-2 mb-2">
                     <label for="batch">Batch</label>

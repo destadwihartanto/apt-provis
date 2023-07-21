@@ -157,7 +157,7 @@ class Site extends CI_Controller
     private function SetTableRows()
     {
         $rows = [
-           
+
             'Site ID',
             'Site Name',
             'Status Site',
@@ -199,90 +199,32 @@ class Site extends CI_Controller
                 'options' => $this->group_model->get_user_group(['group_id' => 2]), // tampilkan hanya general user
                 'rules' => 'required|integer'
             ),
-            array(
-                'category' => 'text',
-                'field' => 'ip_modem',
-                'label' => 'IP Modem',
-                // 'rules' => 'required|valid_ip'
-            ),
-            array(
-                'category' => 'text',
-                'field' => 'ip_mikrotik',
-                'label' => 'IP Mikrotik',
-                // 'rules' => 'required|valid_ip'
-            ),
-            array(
-                'category' => 'text',
-                'field' => 'ip_router',
-                'label' => 'IP Router',
-                // 'rules' => 'required|valid_ip'
-            ),
+
             array(
                 'category' => 'text',
                 'field' => 'airmac_modem',
                 'label' => 'Airmac Modem',
                 // 'rules' => 'required',
             ),
-            array(
-                'category' => 'text',
-                'field' => 'vlan_oam_mikrotik',
-                'label' => 'VLAN Oam Mikrotik',
-                // 'rules' => 'required',
-            ),
-            array(
-                'category' => 'text',
-                'field' => 'vlan_oam_nodeb',
-                'label' => 'VLAN Oam e nodeB',
-                // 'rules' => 'required',
-            ),
-            array(
-                'category' => 'text',
-                'field' => 'vlan_oam_cctv',
-                'label' => 'VLAN Oam CCTV',
-                // 'rules' => 'required',
-            ),
-            array(
-                'category' => 'text',
-                'field' => 'vlan_oam_power',
-                'label' => 'VLAN Oam Power',
-                // 'rules' => 'required',
-            ),
-            array(
-                'category' => 'text',
-                'field' => 'vlan_s1c',
-                'label' => 'VLAN s1-C',
-                // 'rules' => 'required',
-            ),
-            array(
-                'category' => 'text',
-                'field' => 'vlan_s1u',
-                'label' => 'VLAN s1-U',
-                // 'rules' => 'required',
-            ),
-            array(
-                'category' => 'text',
-                'field' => 'snmp_community',
-                'label' => 'Community String SNMP Router dan AP',
-                // 'rules' => 'required'
-            ),
+
             array(
                 'category' => 'text',
                 'field' => 'batch',
                 'label' => 'Batch',
                 'rules' => 'required'
             ),
-            array(
-                'category' => 'text',
-                'field' => 'nama_pic_lokasi',
-                'label' => 'Nama PIC Lokasi',
-                'rules' => 'required'
-            ),
-            array(
-                'category' => 'text',
-                'field' => 'telp_pic_lokasi',
-                'label' => 'Telepon PIC Lokasi',
-                'rules' => 'required'
-            ),
+            // array(
+            //     'category' => 'text',
+            //     'field' => 'nama_pic_lokasi',
+            //     'label' => 'Nama PIC Lokasi',
+            //     'rules' => 'required'
+            // ),
+            // array(
+            //     'category' => 'text',
+            //     'field' => 'telp_pic_lokasi',
+            //     'label' => 'Telepon PIC Lokasi',
+            //     'rules' => 'required'
+            // ),
             array(
                 'category' => 'text',
                 'field' => 'latitude',
@@ -323,13 +265,7 @@ class Site extends CI_Controller
                 'label' => 'Penyedia LC',
                 'rules' => 'required',
             ),
-            array(
-                'category' => 'option',
-                'options' => $this->source_power_model->get_by_condition(['active' => 1]),
-                'field' => 'source_power_id',
-                'label' => 'Sumber Listrik Utama',
-                'rules' => 'required',
-            ),
+
             array(
                 'category' => 'option',
                 'options' => $this->operation_band_model->get_by_condition(['active' => 1]),
@@ -362,7 +298,7 @@ class Site extends CI_Controller
                 'category' => 'date',
                 'field' => 'operational_date',
                 'label' => 'Tanggal Integrasi',
-                'rules' => 'required',
+                // 'rules' => 'required',
             ),
         ];
 

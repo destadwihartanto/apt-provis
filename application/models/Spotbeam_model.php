@@ -1,4 +1,4 @@
-<?php  if (! defined('BASEPATH')) {
+<?php if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
@@ -22,5 +22,17 @@ class Spotbeam_model extends CI_Model
     {
         $this->db->insert($this->table, $data);
         return $this->db->insert_id();
+    }
+
+    public function update($id = 0, $data = [])
+    {
+        $this->db->where('id', $id);
+        $this->db->update($this->table, $data);
+    }
+
+
+    public function delete_beams($id)
+    {
+        $this->db->delete($this->table, array('id' => $id));
     }
 }

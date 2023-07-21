@@ -1,4 +1,4 @@
-<?php  if (! defined('BASEPATH')) {
+<?php if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
@@ -28,5 +28,10 @@ class Dish_model extends CI_Model
     {
         $this->db->where('id', $id);
         $this->db->update($this->table, $data);
+    }
+
+    public function delete_dish($id)
+    {
+        $this->db->delete($this->table, array('id' => $id));
     }
 }

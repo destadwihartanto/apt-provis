@@ -1,4 +1,4 @@
-<?php  if (! defined('BASEPATH')) {
+<?php if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
@@ -10,6 +10,7 @@ class Program_model extends CI_Model
     {
         parent::__construct();
     }
+
 
     public function get_by_condition($where = [])
     {
@@ -28,5 +29,10 @@ class Program_model extends CI_Model
     {
         $this->db->where('id', $id);
         $this->db->update($this->table, $data);
+    }
+
+    public function delete_program($id)
+    {
+        $this->db->delete($this->table, array('id' => $id));
     }
 }
